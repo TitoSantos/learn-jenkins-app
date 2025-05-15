@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+        // This is stage to build the application
         stage('Build') {
             agent {
                 docker {
@@ -14,13 +15,13 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm ci
+                    npm ci #This command is equal to npm install
                     npm run build
                     ls -la
                 '''
             }
         }
-
+         // This is stage to test the application
         stage('Test') {
             agent {
                 docker {
