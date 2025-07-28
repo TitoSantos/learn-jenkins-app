@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo 'Small Change'
+                    echo 'Small Change In JenkinsFile'
                     ls -la
                     node --version
                     npm --version
